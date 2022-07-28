@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .container.brown{
+            width: 200px;
+            height: 150px;
+            position: relative;
+            background: brown;
+            border-radius: 4px;
+        }
+        .container.green{
+            width: 180px;
+            height: 130px;
+            border-radius:4px ;
+            background: darkgreen;
+            position: absolute;
+            left: 10px;
+            top: 10px;
+        }
+        .bolsas{
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2,1fr) ;
+            width: 200px;
+            height: 150px;
+
+        }
+        .bolsas div{
+            z-index:3;
+            display: grid;
+            width: 13px;
+            height: 13px;
+            background: black;
+            border-radius: 50%;
+        }
+        .bolsa2{
+            justify-self: center;    
+        }
+        .bolsa3{
+            justify-self: flex-end;
+        }
+        .bolsa4{
+            align-self:flex-end ;
+        }
+        .bolsa5{
+            align-self: flex-end;
+            justify-self: center;
+        }
+        .bolsa6{
+            align-self: flex-end;
+            justify-self: flex-end;
+        }
+        .bolas{
+            width: 40px;
+            height: 40px;
+            grid-row-gap:none ;
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(3,10px);
+            position: relative;
+            transform: rotate(270deg);
+            left: 50px;
+            top: 40px;
+        }
+        .bolas div{
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            
+        }
+        .bola1{
+            background: tan;
+            transition: 1s ease-out;
+            transition-delay: 0.3s;
+        }
+        .bola2{
+            background: khaki;
+            transition: 1s ease-out;
+            transition-delay: 0.3s;
+        }
+        .bola3{
+            background: violet;
+            transition: 1s ease-out;
+            transition-delay: 0.3s;
+        }
+        .bola4{
+            background: aquamarine;
+            transition: 1s ease-out;
+            transition-delay: 0.3s;
+
+        }
+        .bola5{
+            position: absolute;
+            left: 5px;
+            top: 10px;
+            background: yellowgreen;
+            transition: 1s ease-out;
+            transition-delay: 0.3s;
+            
+        }
+        .bola6{
+            position: absolute;
+            left: 15px;
+            top: 10px;
+       
+            background: palegoldenrod;
+            transition: 1s ease-out;
+            transition-delay: 0.3s;
+        }
+        
+        .bola7{
+            position: absolute;
+            left: 25px;
+            top: 10px;
+            background: wheat;
+
+            transition: 1s ease-out;
+            transition-delay: 0.3s;
+        }
+        
+        .bola8{
+            position: absolute;
+            left: 10px;
+            top: 20px;
+            background: yellow;
+            transition: 1s ease-out;
+            transition-delay: 0.3s;
+        }
+        
+        .bola9{
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background: red;
+            transition: 1s ease-out;
+            transition-delay: 0.3s;
+            
+        }
+        .bola10{
+            position: absolute;
+            left: 15px;
+            top: 30px;
+       background: black;
+       transition: 1s ease-out;
+            transition-delay: 0.3s;
+        }
+        .palo.container{
+            position:relative;
+            transition: transform 0.8s ease;
+            perspective: 70px;
+            transform-style: preserve-3d;
+            transform: rotateY(-70deg);
+            width: 100%;
+        }
+        .palo{
+            z-index:2;
+            width: 100%;
+            height: 5px;
+            background: darkgoldenrod;
+            display: absolute;
+            left: 60%;
+            top: 12.5%;
+
+            
+        }
+       
+        .palo.front{
+            width: 4%;
+            height: 5px;
+            background: white;
+            position: absolute;
+            top: 1%;
+            left:0%;
+           
+            
+        }
+        .palo.back{
+            width:40%;
+            height: 5px;
+            background: black;
+            position: absolute;
+            top: 1%;
+            left: 80%;
+        }
+        .green:hover .palo.container{
+            transform: translateX(-30px);
+           
+        }
+        .green:hover .bola1{
+            transform: translate(-40px,-50px);
+            
+        }
+        .green:hover .bola2{
+            transform: translate(-10px,-40px);
+            
+        }
+
+        .green:hover .bola3{
+            transform: translate(30px,-50px);
+            
+        }
+        .green:hover .bola4{
+            transform: translate(40px,-30px);
+            
+        }
+        .green:hover .bola5{
+            transform: translate(-55px,0) ;
+            
+        }
+        .green:hover .bola6{
+            transform: translate(0,-55px) ;
+            
+        }
+        .green:hover .bola7{
+            transform: translate(40px,0) ;
+            
+        }
+        .green:hover .bola8{
+            transform: translate(-55px,0) ;
+            
+        }
+        .green:hover .bola9{
+            transform: translate(36px,0) ;
+            
+        }
+        .green:hover .bola10{
+            transform: translate(0,5px) ;
+            
+        }
+</style>
+</head>
+<body>
+    <div class="container brown" >
+        <div class="bolsas">
+            <div class="bolsa1"></div>
+            <div class="bolsa2"></div>
+            <div class="bolsa3"></div>
+            <div class="bolsa4"></div>
+            <div class="bolsa5"></div>
+            <div class="bolsa6"></div>
+        </div>
+        <div class="container green">
+            <div class="bolas">
+                <div class="bola1"></div>
+                <div class="bola2"></div>
+                <div class="bola3"></div>
+                <div class="bola4"></div>
+                <div class="bola5"></div>
+                <div class="bola6"></div>
+                <div class="bola7"></div>
+                <div class="bola8"></div>
+                <div class="bola9"></div>
+                <div class="bola10"></div>
+
+            </div>
+            <div class="palo container ">
+                <div class="palo">
+                    <div class="palo front"></div>
+                    <div class="palo back"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>
